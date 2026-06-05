@@ -1,0 +1,42 @@
+book: 西游记
+test_type: subagent_parallel_query
+description: >
+  复杂深度问答——子智能体并行委托测试用例。
+  这些用例要求对多个独立实体进行深度信息检索，每个实体都涉及多维度关系查询
+  和大量章节原文佐证，单靠主智能体顺序处理效率低，适合委派子智能体并行。
+  与 subagent_parallel_gen 的区别：本用例是问答任务，不要求输出设定文件。
+cases:
+- id: SP-Q-001
+  question: >
+    详细分析孙悟空、牛魔王、二郎神三人的完整修行经历：
+    各自的师承是谁？学过哪些法术和神通？历次重要战绩有哪些？最终结局如何？
+  meta:
+    task_mode: deep_qa
+    parallel_entities:
+    - entity_id: 西游记_人物_孙悟空_0
+      query_dimensions: [师承, 法术, 战绩, 结局]
+    - entity_id: 西游记_人物_牛魔王_0
+      query_dimensions: [师承, 法术, 战绩, 结局]
+    - entity_id: 西游记_人物_二郎神_0
+      query_dimensions: [师承, 法术, 战绩, 结局]
+    expected_subagent_count: 3
+    delegation_reason: >
+      每个角色需检索 4 个维度（师承→出身关系, 法术→掌握关系, 战绩→对立关系×多次, 结局→最终归属），
+      每个维度都要走 Graph 详情 + Corpus 原文验证，单个实体就需 10+ 次工具调用。
+- id: SP-Q-002
+  question: >
+    天蓬元帅、卷帘大将、齐天大圣三人被贬/受罚的经过分别是什么？
+    贬下凡后各自的经历如何？后来分别怎样被收服归入取经团队？
+  meta:
+    task_mode: deep_qa
+    parallel_entities:
+    - entity_id: 西游记_人物_猪八戒_0
+      query_dimensions: [受罚原因, 贬后经历, 收服过程]
+    - entity_id: 西游记_人物_沙悟净_0
+      query_dimensions: [受罚原因, 贬后经历, 收服过程]
+    - entity_id: 西游记_人物_孙悟空_0
+      query_dimensions: [受罚原因, 贬后经历, 收服过程]
+    expected_subagent_count: 3
+    delegation_reason: >
+      每个角色需追溯三段式完整故事线（天庭→下凡→归队），
+      涉及出身、对立、合作等多种关系类型，需跨多个章节检索原文还原细节。

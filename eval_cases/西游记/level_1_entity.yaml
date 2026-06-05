@@ -1,0 +1,68 @@
+book: 西游记
+level: 1
+description: Level 1 测试用例
+cases:
+- id: L1-001
+  question: 如意金箍棒的重量是多少？
+  meta:
+    involved_entities:
+    - 如意金箍棒
+    expected_tool_types:
+    - entity
+  _validation: null
+- id: L1-002
+  question: 菩提祖师传给孙悟空的变化之术叫什么？
+  meta:
+    involved_entities:
+    - 地煞七十二变
+    expected_tool_types:
+    - entity
+  _validation: null
+- id: L1-003
+  question: 红孩儿掌握的特殊火焰神通是什么？
+  meta:
+    involved_entities:
+    - 三昧真火
+    expected_tool_types:
+    - entity
+  _validation: null
+- id: L1-004
+  question: 太上老君炼制的哪种丹药可以起死回生？
+  meta:
+    involved_entities:
+    - 九转还魂丹
+    expected_tool_types:
+    - entity
+  _validation: null
+- id: L1-005
+  question: 观音菩萨开价五千两银子的佛门宝物是什么？
+  meta:
+    involved_entities:
+    - 锦襕袈裟
+    expected_tool_types:
+    - entity
+  _validation: null
+- id: L1-006
+  question: 哪座山是如来佛祖镇压孙悟空的地方？
+  meta:
+    involved_entities:
+    - 五行山
+    expected_tool_types:
+    - entity
+  _validation: null
+- id: L1-007
+  question: 能够套取万物的太上老君护身法宝叫什么？
+  meta:
+    involved_entities:
+    - 金刚琢
+    expected_tool_types:
+    - entity
+  _validation: null
+- id: L1-008
+  question: 孙悟空在八卦炉中炼就的识妖眼力叫什么？
+  meta:
+    involved_entities:
+    - 火眼金睛
+    expected_tool_types:
+    - entity
+  _validation: null

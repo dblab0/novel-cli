@@ -1,0 +1,41 @@
+请根据以下设定文件内容，生成 Level {{ level }} 难度的测试问题。
+
+## 难度定义
+{{ level_definition }}
+
+## 设定文件内容
+{{ settings_content }}
+{% if instruction %}
+
+## 用户自定义指令
+{{ instruction }}
+{% endif %}
+
+请生成 5-10 个 Level {{ level }} 难度的测试问题，这些问题应该：
+1. 需要通过 SearchNovel 工具查询知识库才能回答
+2. 涉及设定文件中提到的实体（人物、门派、法宝、地域等）
+3. 难度符合上述 Level {{ level }} 难度的定义
+
+SearchNovel 工具支持三种 action：
+- entity：搜索实体（人物、法宝、门派等）
+- graph：查询知识图谱关系（人物关系、物品归属、势力结构等）
+- corpus：查找原文（验证细节、对比描写、提取具体场景）
+
+## 该难度的示例问题
+{{ level_examples }}
+
+## 输出格式
+[
+  {
+    "id": "L{{ level }}-001",
+    "question": "问题内容",
+    "involved_entities": ["涉及的实体名称"],
+    "expected_tool_types": ["entity", "graph", "corpus"]
+  }
+]
+
+注意：
+- Level 1 问题只需 ["entity"]
+- Level 2 问题只需 ["entity", "graph"]
+- Level 3 问题可能需要 ["entity", "graph", "corpus"]
+- Level 4 问题通常需要 ["entity", "graph", "corpus"]

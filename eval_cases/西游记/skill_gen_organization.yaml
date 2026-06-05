@@ -1,0 +1,49 @@
+book: 西游记
+skill_type: generate-organization
+description: 组织设定生成评估用例
+cases:
+- id: SG-ORG-001
+  question: /skill:generate-organization 检索西游记_组织_天庭_0 相关信息后生成组织设定
+  meta:
+    entity_id: 西游记_组织_天庭_0
+    entity_name: 天庭
+    entity_type: 组织
+    skill_type: generate-organization
+    output_path: organizations/西游记_组织_天庭_0.md
+    description_count: 37
+    descriptions:
+    - '4': 玉帝统治的天界朝廷，有天宫、灵霄宝殿、御马监等机构，众仙卿、天将等组成。
+    - '6': 玉帝统领的天宫势力，包括天兵天将、诸神等。
+    - '8': 天界统治机构，玉帝为尊，有天将、天师等。
+    - '9': 以玉帝为首的天界统治机构。玉帝降下敕旨命泾河龙王行雨，又命魏征梦斩泾河龙王。
+    - '14': 天宫，孙悟空曾大闹天宫，后受封弼马温。
+- id: SG-ORG-002
+  question: /skill:generate-organization 检索西游记_组织_西天_0 相关信息后生成组织设定
+  meta:
+    entity_id: 西游记_组织_西天_0
+    entity_name: 西天
+    entity_type: 组织
+    skill_type: generate-organization
+    output_path: organizations/西游记_组织_西天_0.md
+    description_count: 40
+    descriptions:
+    - '7': 西方极乐世界，如来居处。又称灵山胜境。
+    - '8': 佛教圣山，如来及诸佛所在，有婆罗双林、雷音宝刹等。
+    - '12': 大乘佛法所在地，玄奘取经的目标方向，路程十万八千里。
+    - '14': 唐僧取经的目的地，指西方极乐世界，有灵山、大雷音寺。
+    - '15': 西天佛地，唐僧取经的最终目的地。
+- id: SG-ORG-003
+  question: /skill:generate-organization 检索西游记_组织_唐朝_0 相关信息后生成组织设定
+  meta:
+    entity_id: 西游记_组织_唐朝_0
+    entity_name: 唐朝
+    entity_type: 组织
+    skill_type: generate-organization
+    output_path: organizations/西游记_组织_唐朝_0.md
+    description_count: 38
+    descriptions:
+    - '8': 东土的国家，观音前来寻取经人。
+    - '10': 唐太宗所统治的王朝，又称唐朝。太宗为大唐皇帝，有御林军、文武百官。
+    - '11': 唐朝，唐太宗统治的国家。
+    - '12': 太宗统治的皇朝，崇尚佛教，举办水陆大会，支持玄奘西天取经。
+    - '13': 三藏所属的国家，唐王治下，边界至河州卫、两界山东半边。

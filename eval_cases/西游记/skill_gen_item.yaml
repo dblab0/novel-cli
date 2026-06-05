@@ -1,0 +1,79 @@
+book: 西游记
+skill_type: generate-item
+description: 物品设定生成评估用例
+cases:
+- id: SG-ITEM-001
+  question: /skill:generate-item 检索西游记_物品_降妖棒_0 相关信息后生成物品设定
+  meta:
+    entity_id: 西游记_物品_降妖棒_0
+    entity_name: 降妖棒
+    entity_type: 物品
+    skill_type: generate-item
+    output_path: items/西游记_物品_降妖棒_0.md
+    description_count: 26
+    descriptions:
+    - '8': 沙悟净手持的宝杖，与木吒战斗。文本中称宝杖、降妖杖。
+    - '22': 沙悟净的兵器，又称宝杖、降妖杖。原是月宫梭罗派吴刚伐下的桂枝，经鲁班制造，玉皇赐给卷帘大将。能降妖伏魔，可长可短。
+    - '25': 沙和尚的兵器，与猪八戒、孙行者一起围攻镇元仙。
+    - '28': 沙僧使用的兵器，即降妖宝杖，用于与黄袍怪交战。
+    - '29': 沙悟净的兵器，降妖宝杖，用于战斗。
+- id: SG-ITEM-002
+  question: /skill:generate-item 检索西游记_物品_金箍棒_0 相关信息后生成物品设定
+  meta:
+    entity_id: 西游记_物品_金箍棒_0
+    entity_name: 金箍棒
+    entity_type: 物品
+    skill_type: generate-item
+    output_path: items/西游记_物品_金箍棒_0.md
+    description_count: 76
+    descriptions:
+    - '3': 天河定底神珍铁，重一万三千五百斤，两头金箍中间乌铁，上镌字。可随心意变化大小，原是大禹治水定江海浅深的定子，被孙悟空取为兵器。
+    - '4': 孙悟空的兵器，也称金箍棒、铁棒。可从耳中取出，随意变化大小，重如泰山。孙悟空曾用它打败巨灵神和哪吒。
+    - '5': 齐天大圣的兵器，又称如意棒。可从耳朵中掣出，幌一幌变成碗来粗细、丈二长短。大圣用它打退九曜星、战天神。
+    - '6': 齐天大圣的兵器，又称如意棒、金箍棒、绣花针，是天河定底的神珍铁，可变化大小。
+    - '7': 即如意金箍棒，悟空兵器。可从耳中掣出，迎风变碗口粗细，能变三条。
+- id: SG-ITEM-003
+  question: /skill:generate-item 检索西游记_物品_九齿钉钯_0 相关信息后生成物品设定
+  meta:
+    entity_id: 西游记_物品_九齿钉钯_0
+    entity_name: 九齿钉钯
+    entity_type: 物品
+    skill_type: generate-item
+    output_path: items/西游记_物品_九齿钉钯_0.md
+    description_count: 41
+    descriptions:
+    - '8': 猪悟能的兵器，九齿钉耙，又称钯。
+    - '18': 猪刚鬣的兵器，他自称有九齿的钉钯，不怕法师和尚。
+    - '19': 又称九齿钉钯，猪八戒的兵器。由神冰铁锻炼而成，老君动钤锤，荧惑添炭屑，五方五帝、六丁六甲参与铸造。上有九齿，双环金坠叶，名为上宝沁金钯，原为玉皇镇丹阙之物，赐给天蓬元帅。可随身变化，威力巨大。
+    - '20': 猪悟能的武器，又称钉钯。
+    - '21': 猪八戒的兵器九齿钉耙，本回中与孙悟空一起打死洞中妖狐等。
+- id: SG-ITEM-004
+  question: /skill:generate-item 检索西游记_物品_锦襕袈裟_0 相关信息后生成物品设定
+  meta:
+    entity_id: 西游记_物品_锦襕袈裟_0
+    entity_name: 锦襕袈裟
+    entity_type: 物品
+    skill_type: generate-item
+    output_path: items/西游记_物品_锦襕袈裟_0.md
+    description_count: 21
+    descriptions:
+    - '8': 如来给予观音的宝物，让取经人穿用，可免堕轮回。
+    - '11': 唐太宗赐给陈玄奘的袈裟。
+    - '12': 如来赐予的宝贝，价值五千两，由冰蚕丝等制成，镶嵌多种宝珠，穿上可避灾厄，闲时折迭，遇圣才穿。
+    - '13': 三藏穿着的法衣，在佛前礼拜时穿着。
+    - '16': 唐僧的宝贝袈裟，佛门异宝，红光满室，彩气盈庭，被黑大王趁火打劫盗走。
+- id: SG-ITEM-005
+  question: /skill:generate-item 检索西游记_物品_通关文牒_0 相关信息后生成物品设定
+  meta:
+    entity_id: 西游记_物品_通关文牒_0
+    entity_name: 通关文牒
+    entity_type: 物品
+    skill_type: generate-item
+    output_path: items/西游记_物品_通关文牒_0.md
+    description_count: 22
+    descriptions:
+    - '12': 太宗写给玄奘的取经文牒，用了通行宝印，用于西行过关。
+    - '29': 唐天子颁发的通关文牒，上写取经缘由，需沿途倒换。
+    - '40': 通关文牒，唐僧师徒西行所需官方文书，国王倒换关文。
+    - '45': 唐朝的官方文书，唐僧师徒经过各国时需要倒换关文，行者带在身上。
+    - '46': 通关文牒，国王用了宝印后本想交给唐僧放行，后因道士反对收回，最终在赌赛后放行时给予唐僧。

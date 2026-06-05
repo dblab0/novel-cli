@@ -1,0 +1,20 @@
+version: 1
+agent:
+  # 作为 v3 的子智能体配置，继承 v3 能力后裁剪
+  # 非 extend: default，不违反专注型 agent 规范
+  extend: ./agent.yaml
+  name: "NovelResearcherAgent"
+  system_prompt_path: ./novel-researcher.md
+  system_prompt_args:
+    ROLE_ADDITIONAL: |
+      你正在作为子智能体运行。所有 "user" 消息来自主智能体。
+      主智能体看不到你的上下文，只能看到你完成任务后的最终消息。
+      你必须将主智能体视为调用者。
+      不要直接向最终用户提问。如果信息不清晰，在最终摘要中说明歧义点。
+  when_to_use: |
+    用于需要深度检索小说知识库的独立子任务：单实体的完整设定生成、
+    多维度关系分析、原文段落收集等。可并行启动多个实例处理不同实体。
+  exclude_tools:
+    - "novel_cli.tools.agent:Agent"           # 禁止调用其他智能体
+    - "novel_cli.tools.ask_user:AskUserQuestion"  # 禁止直接问用户
+  subagents: {}

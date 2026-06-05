@@ -1,0 +1,64 @@
+book: 西游记
+skill_type: generate-location
+description: 地点设定生成评估用例
+cases:
+- id: SG-LOC-001
+  question: /skill:generate-location 检索西游记_地点_花果山_0 相关信息后生成地点设定
+  meta:
+    entity_id: 西游记_地点_花果山_0
+    entity_name: 花果山
+    entity_type: 地点
+    skill_type: generate-location
+    output_path: locations/西游记_地点_花果山_0.md
+    description_count: 25
+    descriptions:
+    - '1': 东胜神洲傲来国近大海中的山，乃十洲之祖脉，三岛之来龙，山顶有仙石，产石猴。山中有水帘洞，为众猴安身之处。美猴王领群猴朝游花果山。
+    - '2': 孙悟空的老家，位于东胜神洲傲来国，山中有水帘洞，群猴居住之地。
+    - '3': 位于东胜神洲的名山，孙悟空的老家，有水帘洞、铁板桥，聚集四万七千余猴及七十二洞妖王。
+    - '4': 孙悟空在人间的居所，山中有水帘洞，是猴群与各路妖王的聚集地。
+    - '5': 齐天大圣下界为王的洞府所在。山前有天兵扎营围困，山中有水帘洞、铁板桥。四健将与七十二洞妖王在此演习武艺。
+- id: SG-LOC-002
+  question: /skill:generate-location 检索西游记_地点_南天门_0 相关信息后生成地点设定
+  meta:
+    entity_id: 西游记_地点_南天门_0
+    entity_name: 南天门
+    entity_type: 地点
+    skill_type: generate-location
+    output_path: locations/西游记_地点_南天门_0.md
+    description_count: 22
+    descriptions:
+    - '1': 天庭之门，玉帝命千里眼、顺风耳开南天门观看下界金光。
+    - '3': 天庭的正门，太白金星领旨从此出天界前往花果山。
+    - '4': 天宫的正门，碧沉沉琉璃造就，明幌幌宝玉妆成。增长天王率天将把守，孙悟空两次由此出入。
+    - '6': 天宫之门，玉帝与众仙至此遥观下界战斗。
+    - '8': 天庭的大门，观音与木吒曾到此见玉帝。
+- id: SG-LOC-003
+  question: /skill:generate-location 检索西游记_地点_灵霄宝殿_0 相关信息后生成地点设定
+  meta:
+    entity_id: 西游记_地点_灵霄宝殿_0
+    entity_name: 灵霄宝殿
+    entity_type: 地点
+    skill_type: generate-location
+    output_path: locations/西游记_地点_灵霄宝殿_0.md
+    description_count: 24
+    descriptions:
+    - '1': 玉皇大天尊玄穹高上帝驾座之处，众仙卿聚集之地。文本中写“灵霄宝店”，为天庭宫殿。
+    - '3': 玉皇大天尊玄穹高上帝朝会的正殿，位于金阙云宫内，众仙卿在此议事。
+    - '4': 天庭玉帝的朝堂，又称灵霄殿。金钉攒玉户，彩凤舞朱门，殿内有琉璃盘、太乙丹、玛瑙瓶、珊瑚树等。
+    - '6': 玉帝处理政务的殿堂，天师邱弘济启知宣入菩萨，玉帝与众仙在此讲话。
+    - '7': 玉帝朝殿，悟空在殿前与王灵官厮杀。又称灵霄殿。
+- id: SG-LOC-004
+  question: /skill:generate-location 检索西游记_地点_水帘洞_0 相关信息后生成地点设定
+  meta:
+    entity_id: 西游记_地点_水帘洞_0
+    entity_name: 水帘洞
+    entity_type: 地点
+    skill_type: generate-location
+    output_path: locations/西游记_地点_水帘洞_0.md
+    description_count: 22
+    descriptions:
+    - '1': 花果山中的洞天福地，瀑布飞泉之后有铁板桥，桥那边有石房石碣，镌着“花果山福地，水帘洞洞天”。众猴随石猴进入，拜其为美猴王。
+    - '2': 花果山中的洞府，孙悟空及其猴群的居住地，曾被混世魔王强占。
+    - '3': 花果山内的洞府，孙悟空与众猴居住之处，有铁板桥通东海龙宫。
+    - '4': 花果山内的洞府，孙悟空称王之所，洞天深处有宝位。巨灵神与哪吒曾到此挑战。
+    - '5': 花果山中的洞府，大圣与众猴居住之处。天兵围困时，四健将与群猴深藏在水帘洞底。

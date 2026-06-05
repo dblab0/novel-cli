@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: novel-postgres
+    restart: unless-stopped
+    shm_size: 256mb
+    mem_limit: 2g
+    memswap_limit: 2g
+    cpus: '2.0'
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-novel_graph_search}
+      POSTGRES_USER: ${POSTGRES_USER:-novel_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+      POSTGRES_SHARED_BUFFERS: 512MB
+      POSTGRES_EFFECTIVE_CACHE_SIZE: 1536MB
+      POSTGRES_WORK_MEM: 16MB
+      POSTGRES_MAINTENANCE_WORK_MEM: 128MB
+      POSTGRES_MAX_CONNECTIONS: 50
+      POSTGRES_RANDOM_PAGE_COST: 1.1
+      POSTGRES_CHECKPOINT_COMPLETION_TARGET: 0.9
+      POSTGRES_WAL_BUFFERS: 16MB
+      POSTGRES_MIN_WAL_SIZE: 1GB
+      POSTGRES_MAX_WAL_SIZE: 2GB
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-novel_admin}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - novel-db-network
+
+volumes:
+  postgres_data:
+
+networks:
+  novel-db-network:

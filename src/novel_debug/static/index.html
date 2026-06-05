@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novel Debug</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Novel Debug</h1>
+    <nav>
+      <button class="tab-btn active" data-tab="playground">工具测试场</button>
+      <button class="tab-btn" data-tab="trajectory">轨迹构建器</button>
+    </nav>
+    <div class="book-selector">
+      <label for="global-book">书籍：</label>
+      <select id="global-book"></select>
+    </div>
+  </header>
+
+  <!-- Tab 1: 工具测试场 -->
+  <section id="tab-playground" class="tab-content active">
+    <!-- 搜索区：Entity + Corpus -->
+    <div class="section-label">搜索</div>
+    <div class="panel-grid">
+      <!-- Entity 面板 -->
+      <div class="panel" id="panel-entity">
+        <div class="panel-header" data-panel="entity">
+          <span class="panel-toggle">▼</span>
+          <span class="panel-icon icon-search"></span>
+          <span class="panel-title">Entity 搜索</span>
+          <span class="panel-summary" id="entity-summary"></span>
+        </div>
+        <div class="panel-body" id="entity-body">
+          <div class="panel-form">
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <input type="text" id="entity-query" name="query" placeholder="输入实体名或关键词...">
+              </div>
+              <div class="form-group">
+                <select id="entity-mode" name="search_mode">
+                  <option value="vector">语义搜索</option>
+                  <option value="name">名称匹配</option>
+                </select>
+              </div>
+              <button id="btn-entity-search" class="primary">搜索</button>
+            </div>
+            <button class="advanced-toggle" onclick="toggleAdvanced('entity')">▶ 高级选项</button>
+            <div class="advanced-options" id="entity-advanced">
+              <div class="form-group">
+                <label>top_k</label>
+                <input type="number" id="entity-topk" value="10" min="1" max="50">
+              </div>
+            </div>
+          </div>
+          <div class="panel-result" id="entity-result"></div>
+        </div>
+      </div>
+
+      <!-- Corpus 面板 -->
+      <div class="panel" id="panel-corpus">
+        <div class="panel-header" data-panel="corpus">
+          <span class="panel-toggle">▼</span>
+          <span class="panel-icon icon-doc"></span>
+          <span class="panel-title">Corpus 原文</span>
+          <span class="panel-summary" id="corpus-summary"></span>
+        </div>
+        <div class="panel-body" id="corpus-body">
+          <div class="panel-form">
+            <div class="form-group">
+              <label>keyword</label>
+              <input type="text" id="corpus-keywords" name="keyword" placeholder="如：掌天瓶">
+            </div>
+            <div class="form-group">
+              <label>chapter_ids（逗号分隔）</label>
+              <input type="text" id="corpus-chapter-ids" name="chapter_ids" placeholder="如：1,2,3">
+            </div>
+            <button class="advanced-toggle" onclick="toggleAdvanced('corpus')">▶ 高级选项</button>
+            <div class="advanced-options" id="corpus-advanced">
+              <div class="form-group">
+                <label>context_size</label>
+                <input type="number" id="corpus-context" value="1" min="0" max="10">
+              </div>
+            </div>
+            <button id="btn-corpus-search" class="primary">搜索</button>
+          </div>
+          <div class="panel-result" id="corpus-result"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 详情区：Graph + Chapter -->
+    <div class="section-label">详情</div>
+    <div class="panel-grid">
+      <!-- Graph 面板 -->
+      <div class="panel" id="panel-graph">
+        <div class="panel-header" data-panel="graph">
+          <span class="panel-toggle">▼</span>
+          <span class="panel-icon icon-graph"></span>
+          <span class="panel-title">Graph 关系图</span>
+          <span class="panel-summary" id="graph-summary"></span>
+        </div>
+        <div class="panel-body" id="graph-body">
+          <div class="panel-form">
+            <div class="form-group">
+              <label>entity_id</label>
+              <input type="text" id="graph-entity-id" name="entity_id" placeholder="如：凡人修仙传_人物_韩立_0">
+            </div>
+            <div class="form-group">
+              <label>rel_type（留空查看概览）</label>
+              <input type="text" id="graph-rel-type" name="rel_type" placeholder="如：亲密，留空返回描述+关系类型">
+            </div>
+            <button id="btn-graph-query" class="primary">查询</button>
+          </div>
+          <div class="panel-result" id="graph-result"></div>
+        </div>
+      </div>
+
+      <!-- Chapter 面板 -->
+      <div class="panel" id="panel-chapter">
+        <div class="panel-header" data-panel="chapter">
+          <span class="panel-toggle">▼</span>
+          <span class="panel-icon icon-book"></span>
+          <span class="panel-title">Chapter 章节读取</span>
+          <span class="panel-summary" id="chapter-summary"></span>
+        </div>
+        <div class="panel-body" id="chapter-body">
+          <div class="panel-form">
+            <div class="form-group">
+              <label>chapter_id *</label>
+              <input type="number" id="chapter-id" name="chapter_id" placeholder="如：1">
+            </div>
+            <div class="form-group">
+              <label>start（起始索引，含）</label>
+              <input type="number" id="chapter-start" name="start" placeholder="如：0">
+            </div>
+            <div class="form-group">
+              <label>end（结束索引，不含）</label>
+              <input type="number" id="chapter-end" name="end" placeholder="如：9">
+            </div>
+            <button id="btn-chapter-read" class="primary">读取</button>
+          </div>
+          <div class="panel-result" id="chapter-result"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tab 2: 轨迹构建器 -->
+  <section id="tab-trajectory" class="tab-content">
+    <div class="traj-layout">
+      <!-- 可折叠侧边栏 -->
+      <aside id="session-sidebar" class="session-sidebar">
+        <div class="sidebar-header">
+          <h3>历史会话</h3>
+          <button id="btn-collapse-sidebar" class="sidebar-toggle" title="收起侧边栏">◀</button>
+        </div>
+        <button id="btn-new-session" class="primary sidebar-new-btn">新建会话</button>
+        <ul id="session-list" class="session-list"></ul>
+      </aside>
+
+      <!-- 收起后的展开按钮 -->
+      <button id="btn-expand-sidebar" class="sidebar-expand-btn hidden" title="展开侧边栏">▶</button>
+
+      <!-- 主工作区 -->
+      <div class="traj-main">
+        <!-- 新建会话表单（默认隐藏） -->
+        <div class="session-setup hidden" id="session-setup">
+          <label>用户问题：</label>
+          <input type="text" id="user-input" placeholder="例：韩立是谁？" style="flex:1">
+          <button id="btn-start-session">开始</button>
+        </div>
+
+        <div id="session-workspace" class="hidden">
+          <div id="trajectory-timeline"></div>
+
+          <div class="tool-call-bar">
+            <select id="traj-tool-select"></select>
+            <div id="traj-param-form"></div>
+            <div class="btn-row">
+              <button id="btn-call-tool">调用</button>
+              <button id="btn-undo" disabled>撤回上一步</button>
+            </div>
+          </div>
+
+          <div class="text-input-bar">
+            <label>粘贴模型回答：</label>
+            <textarea id="model-text" rows="3" placeholder="将外部 LLM 的回答粘贴到这里..."></textarea>
+            <div class="btn-row">
+              <button id="btn-submit-text">提交回答</button>
+              <button id="btn-copy-traj">复制轨迹</button>
+              <button id="btn-copy-traj-tools">预测下一步</button>
+              <button id="btn-end-turn">结束轮次</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+book: 西游记
+skill_type: generate-skill
+description: 功法设定生成评估用例
+cases:
+- id: SG-SKILL-001
+  question: /skill:generate-skill 检索西游记_技能_唵囒静法界乾元亨利贞咒_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_唵囒静法界乾元亨利贞咒_0
+    entity_name: 唵囒静法界乾元亨利贞咒
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_唵囒静法界乾元亨利贞咒_0.md
+    description_count: 10
+    descriptions:
+    - '15': 孙悟空念的咒语，以此唤出当坊土地和本处山神。
+    - '24': 孙悟空念的咒语，可拘唤土地神。
+    - '38': 孙悟空念诵的真言咒语，凭此拘得山神土地前来听令，帮助太子收集猎物。
+    - '42': 观音念动的咒语，能唤出本山土地众神，或使天罡刀变倒须钩。
+    - '65': 孙悟空念的咒语，拘来五方揭谛、六丁六甲、护教伽蓝等神。
+- id: SG-SKILL-002
+  question: /skill:generate-skill 检索西游记_技能_隐身遁法_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_隐身遁法_0
+    entity_name: 隐身遁法
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_隐身遁法_0.md
+    description_count: 9
+    descriptions:
+    - '5': 齐天大圣的法术，可使自身隐身。大圣从西天门使隐身法逃去，后又使隐身法径至蟠桃会上偷酒。
+    - '6': 齐天大圣使用的神通，走出营围，往灌江口去。
+    - '22': 孙悟空掌握的多种法术之一，可使身形隐匿。他自称件件皆知。
+    - '24': 孙悟空使用的法术，能隐身进入道房。
+    - '37': 太子误以为唐僧使用的法术，实为护法神保护所致。
+- id: SG-SKILL-003
+  question: /skill:generate-skill 检索西游记_技能_解锁法_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_解锁法_0
+    entity_name: 解锁法
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_解锁法_0.md
+    description_count: 6
+    descriptions:
+    - '25': 孙行者使的法术，用金箍棒往门上一指，即打开锁闭的几层门。
+    - '52': 孙悟空念动咒语的解锁法术，用手一抹即可开锁。
+    - '62': 孙悟空使用的法术，用手一抹即可打开铁锁。
+    - '71': 孙悟空用金箍棒指门使出的法术，能轻轻打开锁住的门。
+    - '92': 孙悟空的法术，用手一抹即可开锁。
+- id: SG-SKILL-004
+  question: /skill:generate-skill 检索西游记_技能_七十二变_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_七十二变_0
+    entity_name: 七十二变
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_七十二变_0.md
+    description_count: 16
+    descriptions:
+    - '2': 地煞数变化，孙悟空学成的变化之术，能变松树等各种事物。
+    - '3': 孙悟空所学的变化之术，有七十二种变化，能隐身遁身、起法摄法等。
+    - '7': 悟空自称有七十二般变化，万劫不老长生。
+    - '34': 孙行者的大神通，能变化各种形态，本回中多次使用，如变苍蝇、变小妖、变老奶奶等，文本称“七十二变神通大”。
+    - '35': 孙大圣的神通，能变化多种形态，文中多次提及他有七十二变化。
+- id: SG-SKILL-005
+  question: /skill:generate-skill 检索西游记_技能_定身法_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_定身法_0
+    entity_name: 定身法
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_定身法_0.md
+    description_count: 6
+    descriptions:
+    - '5': 齐天大圣的咒语法术，念动后可使他人定住。大圣用定身法定住七衣仙女，使她们一周天方能解脱。
+    - '39': 孙悟空的法术，用手一指可使对方不能行动。他在乌鸡国金銮殿上定住了文武百官。
+    - '54': 孙悟空的法术，可使众人身体不能动弹。本回中计划用定身法定住西梁女国君臣，待师徒西行一昼夜后再解术。
+    - '74': 孙悟空能使定身法定住妖精。八戒曾提使用定身法定倒妖精。
+    - '89': 孙行者使用的法术，念咒喷法唾即可将妖定住，使其动弹不得。用于定住刁钻古怪和古怪刁钻。
+- id: SG-SKILL-006
+  question: /skill:generate-skill 检索西游记_技能_三头六臂_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_三头六臂_0
+    entity_name: 三头六臂
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_三头六臂_0.md
+    description_count: 7
+    descriptions:
+    - '4': 孙悟空与哪吒都使用的神通，变出三个头和六条手臂，手持兵器战斗。孙悟空曾以此对抗哪吒的三头六臂。
+    - '7': 悟空变化神通，变做三头六臂，使三条如意棒飞舞。
+    - '31': 孙悟空的神通，变出三头六臂，手使三根金箍棒，打得群妖落花流水。
+    - '40': 孙大圣变化的神通，变作三头六臂，拿三根金箍棒乱打，惊出山神土地。
+    - '51': 哪吒太子与兕怪均能使出的战斗神通，变作三头六臂，手持多般兵器。
+- id: SG-SKILL-007
+  question: /skill:generate-skill 检索西游记_技能_筋斗云_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_筋斗云_0
+    entity_name: 筋斗云
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_筋斗云_0.md
+    description_count: 43
+    descriptions:
+    - '2': 菩提祖师传授给孙悟空的腾云之术，一个筋斗就有十万八千里路。
+    - '3': 孙悟空的神通，一个筋斗可行十万八千里，他急纵筋斗云过二百里水面。
+    - '4': 孙悟空的独门飞行技能，速度极快，比太白金星的云快许多，曾将金星撇在脑后先至南天门。
+    - '5': 齐天大圣的驾云神通，速度极快。大圣曾诓骗赤脚大仙说玉帝因他筋斗云疾，着其五路邀请列位。
+    - '7': 悟空技能，一纵十万八千里。
+- id: SG-SKILL-008
+  question: /skill:generate-skill 检索西游记_技能_避水诀_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_避水诀_0
+    entity_name: 避水诀
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_避水诀_0.md
+    description_count: 6
+    descriptions:
+    - '3': 孙悟空在水下行走的法术，捻诀即可分开水路，潜入东洋海底。
+    - '22': 孙悟空入水时需念诵的咒语。他自称水里勾当不熟，需念避水咒才能行走。
+    - '30': 西海小龙王使用的法术，斟酒时能使酒高出杯口而不漫出。
+    - '41': 孙悟空在东洋大海分开波浪的法术。
+    - '43': 在水中通行的法术，行者捻此诀分开波浪入海。
+- id: SG-SKILL-009
+  question: /skill:generate-skill 检索西游记_技能_紧箍儿咒_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_紧箍儿咒_0
+    entity_name: 紧箍儿咒
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_紧箍儿咒_0.md
+    description_count: 19
+    descriptions:
+    - '8': 如来的咒语，分为金紧禁三篇，念动可使戴箍者眼胀头痛。
+    - '14': 又称定心真言，观音菩萨传授给唐僧的咒语，默念可使孙悟空头痛难忍，用于约束其行为。
+    - '15': 观音菩萨传给唐僧的咒语，念动时使孙悟空头上金箍收紧疼痛，用于约束孙悟空。
+    - '16': 唐僧用来约束孙悟空的法术，念动时孙悟空头痛难禁，又称那话儿。
+    - '25': 观音菩萨赐给唐僧的咒语，又称紧箍儿经、旧话儿经，念动可使孙行者头疼。
+- id: SG-SKILL-010
+  question: /skill:generate-skill 检索西游记_技能_火眼金睛_0 相关信息后生成功法设定
+  meta:
+    entity_id: 西游记_技能_火眼金睛_0
+    entity_name: 火眼金睛
+    entity_type: 技能
+    skill_type: generate-skill
+    output_path: skills/西游记_技能_火眼金睛_0.md
+    description_count: 13
+    descriptions:
+    - '7': 悟空在八卦炉巽位被烟熏红双眼，唤作火眼金睛，能识妖邪。
+    - '15': 孙悟空的本领，能看清千里之内吉凶，甚至蜻蜓展翅，在此回中用于寻找丢失的白马。
+    - '18': 行者的眼睛能力，能识别妖怪，文本中描述为“火眼金睛”。
+    - '19': 孙悟空被太上老君在八卦炉中用神火锻炼后获得的神通，眼睛能识破妖魔。文本中形容他的眼睛“似闪电”。
+    - '27': 悟空在八卦炉中炼就的眼力，本回中‘睁火眼金睛观看’，能认出妖精的变化。

@@ -1,0 +1,25 @@
+name: 检查空函数体
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '**/*.py'
+  pull_request:
+    paths:
+      - '**/*.py'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # 需要 2 个提交用于 diff 对比
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 扫描空函数体
+        run: python scripts/check_empty_body.py --diff HEAD~1 src packages

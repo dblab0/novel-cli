@@ -1,0 +1,79 @@
+book: 西游记
+level: 4
+description: Level 4 测试用例
+cases:
+- id: L4-001
+  question: 比较人参果与蟠桃在延寿效果、获取方式、所属势力及在小说经济体系中的价值定位上的异同，结合原文细节说明。
+  meta:
+    involved_entities:
+    - 人参果
+    - 蟠桃
+    - 镇元大仙
+    - 天庭
+    - 延寿灵物
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L4-002
+  question: 比较金刚琢与人种袋两件顶级法宝的功能、使用者、克制方法及在被克制时的原文表现。
+  meta:
+    involved_entities:
+    - 金刚琢
+    - 人种袋
+    - 太上老君
+    - 弥勒佛
+    - 青牛精
+    - 黄眉怪
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L4-003
+  question: 比较天庭与佛门在处理“正统与异端”关系上的策略差异，结合对妖魔（如孙悟空、牛魔王、红孩儿）的收编或镇压原文事例进行分析。
+  meta:
+    involved_entities:
+    - 天庭
+    - 佛门
+    - 孙悟空
+    - 牛魔王
+    - 红孩儿
+    - 正统与异端
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L4-004
+  question: 比较凡间金银货币体系与天庭“延寿灵物”作为价值锚定物的不同使用场景、兑换逻辑和收入分配方式，提取原文中关于“价格”或“俸禄”的具体描写。
+  meta:
+    involved_entities:
+    - 白银
+    - 黄金
+    - 铜钱
+    - 蟠桃
+    - 人参果
+    - 天庭俸禄
+    - 酥合香油
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L4-005
+  question: 比较红孩儿的三昧真火与太上老君的六丁神火在性质、威力、克制方法及原文相关战斗场景中的表现差异。
+  meta:
+    involved_entities:
+    - 红孩儿
+    - 三昧真火
+    - 太上老君
+    - 六丁神火
+    - 观音菩萨
+    - 净瓶甘露
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null

@@ -1,0 +1,38 @@
+请评估以下 agent 的工具使用质量。
+
+<tool_description>
+{{ tool_description }}
+</tool_description>
+
+<question>
+{{ question }}
+</question>
+
+{% if golden_trajectory is defined and golden_trajectory %}
+<golden_trajectory>
+理想调用路径参考（无需严格匹配，但偏离越多扣分越多）：
+{{ golden_trajectory }}
+</golden_trajectory>
+{% endif %}
+
+{% if expected_tool_types is defined and expected_tool_types %}
+<expected_tool_types>
+{{ expected_tool_types }}
+</expected_tool_types>
+{% endif %}
+
+{% if involved_entities is defined and involved_entities %}
+<involved_entities>
+{{ involved_entities }}
+</involved_entities>
+{% endif %}
+
+<tool_calls>
+{{ tool_calls_str }}
+</tool_calls>
+
+<final_answer>
+{{ final_answer }}
+</final_answer>
+
+请直接输出 JSON 评分。

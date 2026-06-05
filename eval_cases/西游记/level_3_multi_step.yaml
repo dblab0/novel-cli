@@ -1,0 +1,110 @@
+book: 西游记
+level: 3
+description: Level 3 测试用例
+cases:
+- id: L3-001
+  question: 孙悟空与牛魔王在原文中结拜为兄弟的具体场景是怎样的？
+  meta:
+    involved_entities:
+    - 孙悟空
+    - 牛魔王
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L3-002
+  question: 红孩儿的三昧真火与观音菩萨的净瓶甘露水之间的克制关系，在原文中是如何描写的？
+  meta:
+    involved_entities:
+    - 红孩儿
+    - 观音菩萨
+    - 三昧真火
+    - 净瓶
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L3-003
+  question: 太上老君的青牛精偷走金刚琢下界为妖，与孙悟空交战的具体原文段落是什么？
+  meta:
+    involved_entities:
+    - 太上老君
+    - 青牛精
+    - 金刚琢
+    - 孙悟空
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L3-004
+  question: 镇元大仙的人参果被偷吃后，他如何对待唐僧师徒？请给出原文中描述这一情节的具体内容。
+  meta:
+    involved_entities:
+    - 镇元大仙
+    - 人参果
+    - 唐僧
+    - 孙悟空
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L3-005
+  question: 如来佛祖用五行山镇压孙悟空时，山上贴的六字真言是什么？原文中对此的完整描写是怎样的？
+  meta:
+    involved_entities:
+    - 如来佛祖
+    - 孙悟空
+    - 五行山
+    - 六字真言
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L3-006
+  question: 铁扇公主的芭蕉扇与灵吉菩萨的定风丹之间的克制关系，在原文火焰山情节中是如何具体体现的？
+  meta:
+    involved_entities:
+    - 铁扇公主
+    - 芭蕉扇
+    - 灵吉菩萨
+    - 定风丹
+    - 孙悟空
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L3-007
+  question: 黄狮精盗走孙悟空、猪八戒、沙和尚的兵器后举办“钉钯宴”，原文中描述宴席花费（猪羊价格）的具体段落是什么？
+  meta:
+    involved_entities:
+    - 黄狮精
+    - 九齿钉钯
+    - 降妖宝杖
+    - 如意金箍棒
+    - 猪
+    - 羊
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null
+- id: L3-008
+  question: 金平府犀牛精假扮佛祖偷吃酥合香油，原文中描述香油价格（每两值银二两）及三个金灯用油总量的具体场景是怎样的？
+  meta:
+    involved_entities:
+    - 辟寒大王
+    - 辟暑大王
+    - 辟尘大王
+    - 酥合香油
+    - 金平府
+    expected_tool_types:
+    - entity
+    - graph
+    - corpus
+  _validation: null

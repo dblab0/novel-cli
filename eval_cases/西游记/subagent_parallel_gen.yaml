@@ -1,0 +1,97 @@
+book: 西游记
+test_type: subagent_parallel_gen
+description: 子智能体并行设定生成委托测试用例
+cases:
+- id: SP-G-001
+  question: 帮我生成孙悟空、猪八戒、沙和尚三人的角色设定
+  meta:
+    parallel_entities:
+    - entity_id: 西游记_人物_孙悟空_0
+      entity_name: 孙悟空
+      skill_type: generate-character
+    - entity_id: 西游记_人物_猪八戒_0
+      entity_name: 猪八戒
+      skill_type: generate-character
+    - entity_id: 西游记_人物_沙悟净_0
+      entity_name: 沙悟净
+      skill_type: generate-character
+    expected_subagent_count: 3
+  _validation: null
+- id: SP-G-002
+  question: 生成如意金箍棒、九齿钉钯、降妖宝杖三件兵器的物品设定
+  meta:
+    parallel_entities:
+    - entity_id: 西游记_物品_金箍棒_0
+      entity_name: 如意金箍棒
+      skill_type: generate-item
+    - entity_id: 西游记_物品_九齿钉钯_0
+      entity_name: 九齿钉钯
+      skill_type: generate-item
+    - entity_id: 西游记_物品_降妖棒_0
+      entity_name: 降妖宝杖
+      skill_type: generate-item
+    expected_subagent_count: 3
+  _validation: null
+- id: SP-G-003
+  question: 帮我生成花果山和水帘洞的地点设定
+  meta:
+    parallel_entities:
+    - entity_id: 西游记_地点_花果山_0
+      entity_name: 花果山
+      skill_type: generate-location
+    - entity_id: 西游记_地点_水帘洞_0
+      entity_name: 水帘洞
+      skill_type: generate-location
+    expected_subagent_count: 2
+  _validation: null
+- id: SP-G-004
+  question: 帮我生成唐僧的角色设定和锦襕袈裟的物品设定
+  meta:
+    parallel_entities:
+    - entity_id: 西游记_人物_唐三藏_0
+      entity_name: 唐僧
+      skill_type: generate-character
+    - entity_id: 西游记_物品_锦襕袈裟_0
+      entity_name: 锦襕袈裟
+      skill_type: generate-item
+    expected_subagent_count: 2
+  _validation: null
+- id: SP-G-005
+  question: 生成辟寒大王、辟暑大王、辟尘大王三个犀牛精的角色设定
+  meta:
+    parallel_entities:
+    - entity_id: 西游记_人物_辟寒大王_0
+      entity_name: 辟寒大王
+      skill_type: generate-character
+    - entity_id: 西游记_人物_辟暑大王_0
+      entity_name: 辟暑大王
+      skill_type: generate-character
+    - entity_id: 西游记_人物_辟尘大王_0
+      entity_name: 辟尘大王
+      skill_type: generate-character
+    expected_subagent_count: 3
+  _validation: null
+- id: SP-G-006
+  question: 帮我生成天庭的组织设定和南天门的地点设定
+  meta:
+    parallel_entities:
+    - entity_id: 西游记_组织_天庭_0
+      entity_name: 天庭
+      skill_type: generate-organization
+    - entity_id: 西游记_地点_南天门_0
+      entity_name: 南天门
+      skill_type: generate-location
+    expected_subagent_count: 2
+  _validation: null
+- id: SP-G-007
+  question: 生成三昧真火和筋斗云的功法设定
+  meta:
+    parallel_entities:
+    - entity_id: 西游记_技能_三昧真火_0
+      entity_name: 三昧真火
+      skill_type: generate-skill
+    - entity_id: 西游记_技能_筋斗云_0
+      entity_name: 筋斗云
+      skill_type: generate-skill
+    expected_subagent_count: 2
+  _validation: null

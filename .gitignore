@@ -1,0 +1,111 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Type checking
+.mypy_cache/
+.pytype/
+
+# Ruff
+.ruff_cache/
+
+# uv
+# uv.lock 通常需要提交到版本控制，但如果项目需要可以取消注释
+# uv.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local config
+.env
+.env.local
+*.local
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Claude Code
+.claude/*
+!.claude/rules/
+
+# Frontend build artifacts
+src/novel_cli/web/static/
+web/dist/
+vis/dist/
+viewer-app/dist/
+packages/novel_eval/src/novel_eval/viewer/static/
+
+skills-lock.json
+
+# Node modules
+node_modules/
+
+# data（保留示例小说数据）
+data/*
+!data/input_data/
+data/input_data/*
+!data/input_data/三国演义/
+!data/input_data/西游记/
+
+# issue文件
+issue.md
+记录.txt
+.env
+
+# 测试report.json
+tests_ai/report.json
+
+# 评估结果
+eval_results/
+
+# 人工工具调用trace
+sessions/

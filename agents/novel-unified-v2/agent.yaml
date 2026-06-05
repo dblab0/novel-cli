@@ -1,0 +1,20 @@
+version: 1
+agent:
+  name: "NovelUnifiedAgent"
+  system_prompt_path: ./system.md
+  system_prompt_args:
+    ROLE_ADDITIONAL: ""
+  tools:
+    - "novel_cli.tools.ask_user:AskUserQuestion"
+    - "novel_cli.tools.file:ReadFile"
+    - "novel_cli.tools.file:WriteFile"
+    - "novel_cli.tools.file:StrReplaceFile"
+    - "novel_cli.tools.file:Glob"
+    - "novel_cli.tools.file:Grep"
+    - "novel_cli.tools.novel:SearchEntity"
+    - "novel_cli.tools.novel:SearchGraph"
+    - "novel_cli.tools.novel:SearchCorpus"
+    - "novel_cli.tools.novel:ReadChapter"
+  tool_validators:
+    - tool: "SearchGraph"
+      require_overview_before_detail: true

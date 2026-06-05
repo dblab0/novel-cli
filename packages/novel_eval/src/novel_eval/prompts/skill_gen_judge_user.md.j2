@@ -1,0 +1,34 @@
+请评估以下 agent 的设定文档生成质量。
+
+<skill_template>
+{{ skill_template }}
+</skill_template>
+
+{% if tool_description is defined and tool_description %}
+<tool_description>
+{{ tool_description }}
+</tool_description>
+{% endif %}
+
+<question>
+{{ question }}
+</question>
+
+{% if golden_trajectory is defined and golden_trajectory %}
+<golden_trajectory>
+理想调用路径参考（无需严格匹配，但偏离越多扣分越多）：
+{{ golden_trajectory }}
+</golden_trajectory>
+{% endif %}
+
+<tool_calls>
+{{ tool_calls_str }}
+</tool_calls>
+
+{% if generated_content is defined and generated_content %}
+<generated_content>
+{{ generated_content }}
+</generated_content>
+{% endif %}
+
+请直接输出 JSON 评分。

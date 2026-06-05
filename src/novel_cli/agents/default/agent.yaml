@@ -1,0 +1,29 @@
+version: 1
+agent:
+  name: "NovelUnifiedV3Agent"
+  system_prompt_path: ./system.md
+  system_prompt_args:
+    ROLE_ADDITIONAL: ""
+  tools:
+    # v2 全部 10 个工具
+    - "novel_cli.tools.ask_user:AskUserQuestion"
+    - "novel_cli.tools.file:ReadFile"
+    - "novel_cli.tools.file:WriteFile"
+    - "novel_cli.tools.file:StrReplaceFile"
+    - "novel_cli.tools.file:Glob"
+    - "novel_cli.tools.file:Grep"
+    - "novel_cli.tools.novel:SearchEntity"
+    - "novel_cli.tools.novel:SearchGraph"
+    - "novel_cli.tools.novel:SearchCorpus"
+    - "novel_cli.tools.novel:ReadChapter"
+    # 新增：子智能体调度
+    - "novel_cli.tools.agent:Agent"
+  subagents:
+    novel-researcher:
+      path: ./novel-researcher.yaml
+      description: >
+        单实体深度检索。用于问答分析和设定生成两种模式。
+        当任务需要为某个实体查询多种关系类型或走完整管线时使用。
+  tool_validators:
+    - tool: "SearchGraph"
+      require_overview_before_detail: true

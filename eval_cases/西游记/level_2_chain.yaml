@@ -1,0 +1,99 @@
+book: 西游记
+level: 2
+description: Level 2 测试用例
+cases:
+- id: L2-001
+  question: 孙悟空的师父菩提祖师传授给他的顶级腾云之术是什么？
+  meta:
+    involved_entities:
+    - 孙悟空
+    - 菩提祖师
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-002
+  question: 如意金箍棒的锻造者是谁？
+  meta:
+    involved_entities:
+    - 如意金箍棒
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-003
+  question: 红孩儿修炼的三昧真火需要用什么东西才能克制？
+  meta:
+    involved_entities:
+    - 三昧真火
+    - 红孩儿
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-004
+  question: 铁扇公主的芭蕉扇需要用哪种丹药才能抵挡其风力？
+  meta:
+    involved_entities:
+    - 芭蕉扇
+    - 铁扇公主
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-005
+  question: 地仙之祖镇元大仙在哪个道观修行？
+  meta:
+    involved_entities:
+    - 镇元大仙
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-006
+  question: 天庭中炼丹之术的集大成者是哪位神仙？
+  meta:
+    involved_entities:
+    - 炼丹
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-007
+  question: 幽冥地府由哪两位共同管理？
+  meta:
+    involved_entities:
+    - 幽冥地府
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-008
+  question: 谁将孙悟空镇压在五行山下？
+  meta:
+    involved_entities:
+    - 孙悟空
+    - 五行山
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-009
+  question: 黄狮精举办钉钯会时派人购买了哪两种牲畜？
+  meta:
+    involved_entities:
+    - 黄狮精
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
+- id: L2-010
+  question: 昴日星官眼中炼出的绣花针可以破解哪个妖精的神通？
+  meta:
+    involved_entities:
+    - 绣花针
+    - 昴日星官
+    expected_tool_types:
+    - entity
+    - graph
+  _validation: null
