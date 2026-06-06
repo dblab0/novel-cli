@@ -175,23 +175,45 @@ novel-eval regen-report --result-dir ./eval_results/...
 
 ## 评估配置 (eval_config.yaml)
 
+项目根目录提供了完整的配置模板 `eval_config.example.yaml`，使用前先复制并填写：
+
+```bash
+cp eval_config.example.yaml eval_config.yaml
+cp .env.example .env
+# 编辑 .env 填入 API Key，编辑 eval_config.yaml 调整模型、路径等
+```
+
+> 模板中每个字段都有中文注释说明，`eval_config.yaml` 已加入 `.gitignore` 不会被提交。
+
+以下为配置结构概览：
+
 ```yaml
-agent:
+agent:                # 被评估 Agent 的 LLM（用于生成评估用例）
   model: deepseek-v3
-  api_key_env: AGENT_API_KEY
-  base_url: ...
+  base_url:           # API 地址（留空用官方默认）
+  api_key_env: EVAL_API_KEY
+  max_tokens: 20000
+  temperature: 0.7
 
-runner:
+runner:               # Runner 子进程配置
   work_dir: ~/novel_test
-  agent_file: agents/novel/agent.yaml  # 根据实际 agent 版本填写
-  timeout: 60
+  agent_file: agents/novel/agent.yaml
+  timeout: 600
+  eval_model: ""      # 留空则使用 novel-cli setup 配置的默认模型（config.toml）
 
-judge:
+judge:                # Judge LLM（用于评分，建议用强模型）
   model: claude-sonnet-4-20250514
-  api_key_env: JUDGE_API_KEY
-  base_url: ...
+  base_url:
+  api_key_env: EVAL_API_KEY
+  max_tokens: 20000
+  temperature: 0.3
 
+settings_dir: /github/novel2settings/settings
 concurrency: 2
+
+tasks:                # 评估任务定义（含维度、书籍、场景）
+  tool_usage: { ... }
+  skill_generation: { ... }
 ```
 
 ## viewer-app 可视化前端

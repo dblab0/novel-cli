@@ -104,6 +104,9 @@ issue.md
 # 测试report.json
 tests_ai/report.json
 
+# 评估配置（含敏感信息，用户从 example 复制）
+eval_config.yaml
+
 # 评估结果
 eval_results/
 

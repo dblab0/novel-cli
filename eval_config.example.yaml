@@ -1,0 +1,126 @@
+# ============================================================
+# Novel CLI 评估框架配置模板
+# ============================================================
+#
+# 使用方法：
+#   1. 复制本文件：cp eval_config.example.yaml eval_config.yaml
+#   2. 复制环境变量：cp .env.example .env，并填写 API Key
+#   3. 根据实际环境修改下面的配置项
+#
+# 注意：eval_config.yaml 已加入 .gitignore，不会被提交
+
+# -----------------------------------------------------------
+# 被评估 Agent 的 LLM 配置
+# 用于 generate（生成评估用例）阶段
+# -----------------------------------------------------------
+agent:
+  model: deepseek-v3                    # 生成问题用的 LLM 模型名称
+  base_url:                             # API 基础 URL，如 http://localhost:4000/v1（留空则使用官方默认地址）
+  api_key_env: EVAL_API_KEY             # 从 .env 文件读取的环境变量名（实际 API Key 写在 .env 中）
+  max_tokens: 20000                     # 最大生成 token 数
+  temperature: 0.7                      # 生成温度（0.0-2.0，越高越随机）
+  # 以下为思考型模型专用（如 deepseek-r1、o3 等），普通模型可删除
+  reasoning_effort: high                # 推理努力程度：high / medium / low
+  extra_body:                           # 额外请求体参数，透传给 LLM API
+    thinking:
+      type: enabled                     # 启用思考模式
+
+# -----------------------------------------------------------
+# Runner 配置（控制子进程如何调用 novel-cli）
+# -----------------------------------------------------------
+runner:
+  work_dir: ~/novel_test                # novel-cli 的工作目录（--work-dir 参数）
+  agent_file: agents/novel/agent.yaml   # Agent 规格文件路径（--agent-file 参数）
+  timeout: 600                          # 每个用例的超时秒数
+  eval_model: ""                        # 评估时 novel-cli 使用的模型，如 "deepseek/deepseek-v3"
+                                        # 留空则使用 novel-cli setup 配置的默认模型（config.toml）
+
+# -----------------------------------------------------------
+# Judge LLM 配置（独立于被评估的 Agent）
+# 用于评分阶段，建议使用能力较强的模型
+# -----------------------------------------------------------
+judge:
+  model: claude-sonnet-4-20250514       # Judge 模型名称
+  base_url:                             # API 基础 URL（留空则使用官方默认地址）
+  api_key_env: EVAL_API_KEY             # 从 .env 文件读取的环境变量名
+  max_tokens: 20000                     # 最大生成 token 数
+  temperature: 0.3                      # 评分建议用较低温度，结果更稳定
+  # 思考型模型专用（按需开启）
+  reasoning_effort: high
+  extra_body:
+    thinking:
+      type: enabled
+
+# -----------------------------------------------------------
+# 数据路径
+# -----------------------------------------------------------
+settings_dir: /github/novel2settings/settings   # 设定文件目录
+
+# -----------------------------------------------------------
+# 运行配置
+# -----------------------------------------------------------
+concurrency: 2                          # 并发执行数（受 API 限流影响，建议 2-4）
+
+# -----------------------------------------------------------
+# 评估任务定义
+# 书籍名称通过 CLI --book 参数指定，无需在此配置
+# -----------------------------------------------------------
+tasks:
+
+  # ==========================
+  # 任务一：tool_usage（工具使用质量评估）
+  # 场景通过 CLI --scenario 参数指定，如：
+  #   novel-eval generate --task tool_usage --book 凡人修仙传 --scenario level_1_entity
+  # ==========================
+  tool_usage:
+    # 评分维度（每项 1-5 分，取加权平均）
+    dimensions:
+      - key: tool_selection
+        label: 工具选择
+        description: 是否选择了正确的工具完成任务
+        improvement_suggestion: 工具选择能力需要改进，建议加强 action 类型识别训练
+      - key: param_quality
+        label: 参数质量
+        description: 工具调用参数是否完整准确
+        improvement_suggestion: 参数构造能力需要改进，建议优化 query 提取
+      - key: call_efficiency
+        label: 调用效率
+        description: 调用链是否高效，有无冗余调用
+        improvement_suggestion: 调用链效率需要改进，建议减少冗余调用
+      - key: result_utilization
+        label: 结果利用
+        description: 是否有效利用了工具返回的结果
+        improvement_suggestion: 结果利用能力需要改进，建议加强对工具返回内容的引用
+
+  # ==========================
+  # 任务二：skill_generation（设定生成能力评估）
+  # ==========================
+  skill_generation:
+    # 评分维度
+    dimensions:
+      - key: tool_selection
+        label: 工具选择
+        description: 是否正确使用搜索工具
+        improvement_suggestion: 工具选择能力需要改进，建议优先使用 SearchEntity 精确查找
+      - key: param_quality
+        label: 参数质量
+        description: entity_id 搜索参数是否精准
+        improvement_suggestion: 参数精准度需要改进，建议使用精确实体名而非模糊关键词
+      - key: call_efficiency
+        label: 调用效率
+        description: 调用链是否高效
+        improvement_suggestion: 调用效率需要改进，建议减少重复搜索
+      - key: setting_completeness
+        label: 设定完整性
+        description: 必填字段是否齐全，信息是否来自检索
+        improvement_suggestion: 设定完整性需要改进，建议确保必填字段填写且来自检索结果
+      - key: format_compliance
+        label: 格式合规性
+        description: 是否严格遵循 SKILL.md 模板格式
+        improvement_suggestion: 格式合规性需要改进，建议严格遵循模板的 Markdown 结构
+    # 设定生成专用参数
+    data_dir: data/input_data           # 实体数据根目录
+    min_descriptions: 20                # 实体最小描述条目数阈值（筛选描述丰富的实体）
+    min_descriptions_by_type:           # 按实体类型覆盖 min_descriptions
+      技能: 5                           # 例：技能类实体只需 5 条描述即可
+    samples_per_type: 10                # 每种实体类型随机抽取的数量
